@@ -1,0 +1,51 @@
+<RootWidget>:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    Label:
+        text: "Nome Completo:"
+    TextInput:
+        id: nome_input
+        multiline: False
+
+    Label:
+        text: "Empresa:"
+    TextInput:
+        id: empresa_input
+        multiline: False
+
+    Label:
+        text: "CPF/CNPJ:"
+    TextInput:
+        id: cpf_input
+        multiline: False
+
+    Label:
+        text: "Endereço:"
+    TextInput:
+        id: endereco_input
+        multiline: False
+
+    Label:
+        text: "Pasta destino:"
+    Label:
+        id: pasta_label
+        text: ""
+        size_hint_y: None
+        height: 30
+        color: 0, 0, 0, 1
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Button:
+        text: "Selecionar Pasta"
+        on_release: root.selecionar_pasta()
+
+    Button:
+        text: "Gerar Contrato"
+        on_release: root.gerar()
